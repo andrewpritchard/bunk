@@ -1,0 +1,16 @@
+/*//////////////////////////////////////////////////////////////////////////////
+// Mixin includes
+//////////////////////////////////////////////////////////////////////////////*/
+
+/* MIXINS */
+// Font size
+// Passed pixel font size is converted to rems, also applies a fallback for browsers that lack rem support
+@mixin font-size($target-font-size: $font-size-default) {
+	font-size: rem($target-font-size);
+}
+
+// Line height
+// Mixin serves to keep the same namespace as the CSS property
+@mixin line-height($target-line-height: $line-height-default, $target-font-size: $font-size-default) {
+	line-height: unitless-line-height($target-line-height, $target-font-size);
+}

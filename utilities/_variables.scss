@@ -1,0 +1,15 @@
+/*//////////////////////////////////////////////////////////////////////////////
+// Variable values
+//////////////////////////////////////////////////////////////////////////////*/
+
+// Colours
+$color-primary: #f00;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 778px;
+$breakpoint-desktop: 768px;
+
+$breakpoint-mobile-max: max-width($breakpoint-mobile - 1px);
+$breakpoint-tablet-max: max-width($breakpoint-tablet - 1px);
+$breakpoint-desktop-max: max-width($breakpoint-desktop - 1px);

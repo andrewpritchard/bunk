@@ -1,0 +1,47 @@
+/*//////////////////////////////////////////////////////////////////////////////
+// Function tasks
+//////////////////////////////////////////////////////////////////////////////*/
+
+// Unit stripper
+// http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass#answer-12335841
+@function strip-units($value) {
+	@return $value / (($value * 0) + 1);
+}
+
+// Ems
+// A Em are calculated by dividing the pixel size by the corresponding pixel value of the parent element
+@function em($target-pixel-size: $font-size-default, $parent-pixel-size: $font-size-default) {
+	@return strip-units($target-pixel-size) / strip-units($parent-pixel-size) + em;
+}
+
+// Rems
+@function rem($target-pixel-size: $font-size-default) {
+	@return strip-units($target-pixel-size) / strip-units($base-font-size) + rem;
+}
+
+// Unitless line-height
+// http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
+@function unitless-line-height($target-line-height: $line-height-default, $target-font-size: $font-size-default) {
+	@return strip-units($target-line-height) / strip-units($target-font-size);
+}
+
+// Get line height in pixels based on specified font size
+@function calculated-line-height($font-size: $font-size-default) {
+    @return unitless-line-height($line-height-default, $font-size-default) * $font-size;
+}
+
+// Small function to convert an negative number into positive one
+@function positive-number($value) {
+    @return ($value * -2) / 2;
+}
+
+// Emulates the Compass tint function
+// https://css-tricks.com/snippets/sass/tint-shade-functions/
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+// Shade utility which simulates the Compass version
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
