@@ -1,0 +1,11 @@
+/*//////////////////////////////////////////////////////////////////////////////
+// WordPress header
+//////////////////////////////////////////////////////////////////////////////*/
+
+// Required header comment information about the theme, use false or null to stop the comment being printed [https://developer.wordpress.org/themes/advanced-topics/child-themes/#2-create-a-stylesheet-style-css]
+@if $wordpress-theme-name and $wordpress-template {
+/*!
+ Theme Name:   #{$wordpress-theme-name}
+ Template:     #{$wordpress-template}
+*/
+}

@@ -8,7 +8,8 @@
     'utilities/mixins';
 
 // Vendors
-@import 'vendors/breakpoint';
+@import 'vendors/wordpress-header',
+    'vendors/breakpoint';
 
 // Pages
 @import 'pages/page',
